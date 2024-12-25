@@ -1,0 +1,7 @@
+cargo:rerun-if-changed=/home/cameron/Desktop/AlbaOs in Rust/albaos/Cargo.toml
+cargo:rustc-link-search=native=/home/cameron/Desktop/AlbaOs in Rust/albaos/target/bootimage/bootloader/x86_64-bootloader/release/build/bootloader-7bbafac7f1172042/out
+cargo:rustc-link-lib=static=kernel_bin-albaos
+cargo:rerun-if-env-changed=KERNEL
+cargo:rerun-if-env-changed=KERNEL_MANIFEST
+cargo:rerun-if-changed=/home/cameron/Desktop/AlbaOs in Rust/albaos/target/albaos/debug/albaos
+cargo:rerun-if-changed=build.rs
