@@ -133,8 +133,17 @@ impl fmt::Write for Writer {
 
 
 
+// we are making this so we can use a global def for writer
 
-
+//imp 1:    currently useless because its immutable aka cant write anything to it
+use lazy_static::lazy_static;
+lazy_static! {
+    pub static ref WRITER: Writer = Writer {
+        column_position: 0,
+        colour_code: ColourCode::new(Colour::LightRed, Colour::Black),
+        buffer: unsafe { &mut *(0xb8000 as *mut Buffer) },
+    };
+}
 
 
 
